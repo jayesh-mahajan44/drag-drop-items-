@@ -1,0 +1,182 @@
+<div class="header">
+  <img
+    src="assets/indiaflagpng.png"
+    alt="India Flag"
+    style="height: 50px; width: 80px;"
+    class="ml-3"
+  />
+  <h3 style="margin: 0; font-weight: 500; font-size: 25px">
+    Indian Circket Team Players
+  </h3>
+  <div class="mr-3">
+    <button type="submit" class="btn btn-danger " (click)="logOut()">
+      Logout
+    </button>
+  </div>
+</div>
+
+<div
+  class="example-list container-fluid"
+  cdkDropList
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop($event)"
+>
+  <div class="example-box mx-0 my-4 " cdkDrag  *ngFor = 'let  player of pos ; index as i' >
+    <div class="text-center bg-secondary  p-2" style="font-size: 16px; font-weight: 500;">
+      {{player.player_role}}
+          <div class="example-handle" cdkDragHandle>
+            <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+              ></path>
+              <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+          </div>
+        </div>
+<div class ="row justify-content-around" >
+    <div *ngFor="let item of player.player" > 
+   
+      <div  class="m-2">
+        <div>
+          <img [src]="item.path" class="w-100 h-100" />
+        </div>
+        <div class="backcolor">
+          <h3 class="name">{{ item.name }}</h3>
+          <div>
+            <h4 class="text-bold">Personal Information</h4>
+            <div>
+              <div class="datafield">
+                <div><strong>Born</strong></div>
+                <div>{{ item.detail.born }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Birth Place</strong></div>
+                <div>{{ item.detail.birthplace }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Height</strong></div>
+                <div>{{ item.detail.height }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Role</strong></div>
+                <div>{{ item.detail.role }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Batting Style</strong></div>
+                <div>{{ item.detail.battingstyle }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Bowling Style</strong></div>
+                <div>{{ item.detail.bowlingstyle }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="example-box mx-0 my-4" cdkDrag >
+    <div class="text-center bg-secondary p-2"  style="font-size: 16px; font-weight: 500;">
+      Bowlers
+
+      <div class="example-handle" cdkDragHandle>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+          ></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="row justify-content-around">
+      <div *ngFor="let item of bowlers; index as i" class="m-2">
+        <div>
+          <img [src]="item.path" class="w-100 h-100" />
+        </div>
+        <div class="backcolor">
+          <h3 class="name">{{ item.name }}</h3>
+          <div>
+            <h4 class="text-bold">Personal Information</h4>
+            <div>
+              <div class="datafield">
+                <div><strong>Born</strong></div>
+                <div>{{ item.detail.born }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Birth Place</strong></div>
+                <div>{{ item.detail.birthplace }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Height</strong></div>
+                <div>{{ item.detail.height }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Role</strong></div>
+                <div>{{ item.detail.role }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Batting Style</strong></div>
+                <div>{{ item.detail.battingstyle }}</div>
+              </div>
+
+              <div class="datafield">
+                <div><strong>Bowling Style</strong></div>
+                <div>{{ item.detail.bowlingstyle }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+</div>
+
+
+
+
+<!-- <div> 
+    <button type="submit" class="btn btn-danger" (click)='logOut()'> Logout</button>
+</div>
+
+<div class="example-container"  >
+  <form [formGroup]="Dragform">
+    <h2>Movies List</h2>
+  
+    <div
+      cdkDropList
+      class="example-l ist"
+      (cdkDropListDropped)="drop($event)"
+      
+      >
+      
+      <div class="example-box" *ngFor="let item of todo, index as i"  cdkDrag >
+
+       <div  class="drag-index"    > {{i+1}}</div> 
+         <input class="drag-index" type="submit"  [formControl]="Dragform.controls[('index')]" name="number" [value]="i+1"  >
+      
+        <div class="moviesName">{{item}} </div> 
+      </div>
+    
+    </div>
+  </form>
+  </div> -->
+
+
+
+
